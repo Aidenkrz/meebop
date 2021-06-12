@@ -1,0 +1,44 @@
+/* CSS Document */
+
+body{
+	background-color: black;
+	overflow: hidden;
+}
+
+#meebop
+{
+	padding-left: 10vw;
+	padding-right: 10vw;
+	padding-bottom: 10vh;
+	padding-top: 10vh;
+	height: 80vh;
+	width: 80vw;
+	border-color: transparent;
+}
+#frog {
+  background-color: #000000;
+  display: block;
+}
+
+#frog img{
+  padding-top: 5em;
+  width: 20em;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#frog h{
+	color: white;
+	text-align: center;
+  	width: 30vw;
+  	height: auto;
+ 	display: block;
+  	margin-left: 35vw;
+  	margin-right: 35vw;
+}
+
+#frog a{
+	color: aquamarine;
+}
