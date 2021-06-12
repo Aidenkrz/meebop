@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Maintenance Calculater</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link href="util.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100"><br>
+					
+					<div class="form__group field" id="rcorners1">
+  						<input type="number" class="form__field" placeholder="Name" name="name" id="number" required />
+  						<label for="name" class="form__label">Payout ($)</label>
+					</div>
+
+					<br>
+				  <table>
+						<thead>
+							<tr class="table100-head">
+								<th>Material Type</th>
+								<th># of Materials</th>
+								<th>Trash Weight</th>
+								<th>Wait Time</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="calct">
+								<th class="matType">Paper</th>
+								<th id="papc">0</th>
+								<th id="paplb">0 lb</th>
+								<th id="papw">0s</th>
+							</tr>
+							<tr class="calct">
+								<th class="matType">Aluminum</th>
+								<th id="alumc">0</th>
+								<th id="alumlb">0 lb</th>
+								<th id="alumw">0s</th>
+							</tr>
+							<tr class="calct">
+								<th class="matType">Plastic</th>
+								<th id="plac">0</th>
+								<th id="plalb">0 lb</th>
+								<th id="plaw">0s</th>
+							</tr>
+							<tr class="calct">
+								<th class="matType">Glass</th>
+								<th id="glac">0</th>
+								<th id="glalb">0 lb</th>
+								<th id="glaw">0s</th>
+							</tr>
+							<tr class="calct">
+								<th class="matType">Precious Metals</th>
+								<th id="pmc">0</th>
+								<th id="pmlb">0 lb</th>
+								<th id="pmw">0s</th>
+							</tr>
+							<tr class="calct"> 
+		  						<th class="matType">Incinerator</th>
+								<th>NA</th>
+								<th id="inclb">0 lb</th>
+								<th id="incw">0s</th>
+							</tr>
+						</tbody>
+					</table>
+					<br>
+					<table>
+						<tr>
+							<th>
+								<h id="thanks">Thank you to Garret, the creator of the <a href="https://docs.google.com/document/d/1ub9_jiUmr-xMksZi7j9Io7ga5Ln-4BWC3iyWqM2s5tM/view">Maintenance Trashman Guide</a>, and Gordan, the creator of the <a href="https://github.com/Builder999/GLTrashCalculator/blob/main/main.py">GLTrashCalculator</a>. Both of which provided inspiration for this.</h>
+							</th>
+						</tr>
+					</table>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		let t;
+		let m;
+		let h;
+		let s;
+		let wRate;
+		
+		document.getElementById("number").addEventListener('change', (event) =>{
+			let x = document.getElementById("number").value;
+			
+			document.getElementById("papc").innerHTML = (x/300).toFixed(2);
+			document.getElementById("paplb").innerHTML = (x/3).toFixed(2) + " lb";
+			cWait(x, 30);
+			document.getElementById("papw").innerHTML = t;
+			
+			document.getElementById("alumc").innerHTML = (x/750).toFixed(2);
+			document.getElementById("alumlb").innerHTML = (x/3.75).toFixed(2) + " lb";
+			cWait(x, 25);
+			document.getElementById("alumw").innerHTML = t;
+			
+			document.getElementById("plac").innerHTML = (x/1500).toFixed(2);
+			document.getElementById("plalb").innerHTML = (x/5).toFixed(2) + " lb";
+			cWait(x, 25);
+			document.getElementById("plaw").innerHTML = t;
+			
+			document.getElementById("glac").innerHTML = (x/2000).toFixed(2);
+			document.getElementById("glalb").innerHTML = (x/5).toFixed(2) + " lb";
+			cWait(x, 20);
+			document.getElementById("glaw").innerHTML = t;
+			
+			document.getElementById("pmc").innerHTML = (x/4500).toFixed(2);
+			document.getElementById("pmlb").innerHTML = (x/6.42857142857).toFixed(2) + " lb";
+			cWait(x, 18.75);
+			document.getElementById("pmw").innerHTML = t;
+			
+			document.getElementById("inclb").innerHTML = (x/3).toFixed(2) + " lb";
+			cWait(x, 30);
+			document.getElementById("incw").innerHTML = t;
+		});
+		
+		function cWait(payout, rate){
+			t = "";
+			h = Math.floor(payout/(rate*60*60));
+			m = Math.floor(payout/(rate*60) % 60).toFixed(0);
+			s = (payout/rate % 60).toFixed(0);
+			if (h>=1) {
+				t = h + "h ";
+			}
+			if (m>=1) {
+				t = t + m + "m ";
+			}
+			if (m>=1 && s>=1 || h>=1 && s>=1 || s>=1){
+				t = t + s + "s";
+			} else if (m==0 && h==0 && t==0) {
+				t = "0s";
+			}
+		}
+	</script>
+
+</body>
+</html>

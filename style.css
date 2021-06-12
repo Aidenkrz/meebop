@@ -1,11 +1,12 @@
 /* CSS Document */
 
-body{
+#meebop
+{
 	background-color: black;
 	overflow: hidden;
 }
 
-#meebop
+#meebop iframe
 {
 	padding-left: 10vw;
 	padding-right: 10vw;
@@ -15,6 +16,9 @@ body{
 	width: 80vw;
 	border-color: transparent;
 }
+
+
+/* Error404 Page */
 #frog {
   background-color: #000000;
   display: block;
