@@ -2,7 +2,7 @@
  
 $secret_key = "arandomkeywithnumbersforsecurity123"; //Set this as your secret key, to prevent others uploading to your server.
 $sharexdir = ""; //This is your file dir, also the link.. Not very important.
-$domain_url = 'https://yourwebsite.here';//Add your website here, including https://
+$domain_url = 'https://shabadabagoobalikemeeboop.com/';//Add your website here, including https://
 $lengthofstring = 8; //Length of the file name
  
 function RandomString($length) {
